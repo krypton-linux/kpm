@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+papm - Simple alpm front-end written in Python
+
+Copyright (c) 2025 Itsuki0222
+
+This program may be freely redistributed under the terms of the GNU General Public License.
+"""
+
+import sys
+import pyalpm
+from pyalpm import Handle
+
+
+def msg_err(error_message):
+    sys.stderr.write("error: " + error_message + "\n")
+
+
+args = sys.argv
+papm_version = "0.1 Alpha"
+pyalpm_version = pyalpm.version()
+alpm_version = pyalpm.alpmversion()
+
+if len(args) == 1:
+    msg_err("No subcommand specified")
+    sys.exit()
+
+match args[1]:
+    case "-v":
+        print("papm" + papm_version + " - pyalpm v" + pyalpm_version)
+        print("libalpm v" + alpm_version)
+
+
+handle = Handle(".", "/var/lib/pacman")
+localdb = handle.get_localdb()
+coreutils = localdb.get_pkg("coreutils")
