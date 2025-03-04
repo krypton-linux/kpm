@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-papm - Simple alpm front-end written in Python
+kpm - Krypton Package Manager
 
 Copyright (c) 2025 Itsuki0222
 
