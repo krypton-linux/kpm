@@ -1,2 +1,2 @@
-# papm
-pyalpmを使用したArch Linuxのパッケージ管理フロントエンド。
+# kpm
+Krypton Linuxのために作られたパッケージマネージャー。
