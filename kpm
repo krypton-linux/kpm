@@ -21,7 +21,8 @@ def version():
     print("papm" + papm_version + " - pyalpm v" + pyalpm_version)
     print("libalpm v" + alpm_version)
 
-
+handle = Handle(".", "/var/lib/pacman")
+localdb = handle.get_localdb()
 args = sys.argv
 papm_version = "0.1 Alpha"
 pyalpm_version = pyalpm.version()
@@ -37,7 +38,4 @@ match args[1]:
 
     case "syncdb":
         core = handle.register_syncdb("core", pyalpm.SIG_DATABASE)
-        extra = handle.register_syncdb("core", pyalpm.SIG_DATABASE)
-
-handle = Handle(".", "/var/lib/pacman")
-localdb = handle.get_localdb()
+        extra = handle.register_syncdb("extra", pyalpm.SIG_DATABASE)
