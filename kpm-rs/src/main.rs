@@ -5,16 +5,24 @@
 /// This program may be freely redistributed under the terms of the GNU General Public License.
 /// 
 
-use clap::Parser;
+use clap::{Parser, Subcommand};
 use tr::tr;
+mod sync_db;
 
 
 #[derive(Parser)]
 struct Cli{
+    #[command(subcommand)]
+    commands: Commands,
     #[arg(short, long)]
     version: bool
-
 }
+
+#[derive(Subcommand)]
+enum Commands{
+    Syncdb,
+}
+
 
 
 fn main() {
@@ -26,6 +34,13 @@ fn main() {
         println!("papm {}",  papm_version);
         println!("libalpm v{}", alpm_v);
         return;
+    }
+
+    match args.commands{
+        Commands::Syncdb => {
+            sync_db::sync_db();
+            return;
+        }
     }
 
     eprintln!("{}", tr!("No subcommand specified"));
