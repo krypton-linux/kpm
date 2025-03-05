@@ -1,0 +1,11 @@
+[package]
+name = "kpm"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+alpm = "4.0.2"
+alpm-utils = "4.0.1"
+clap = { version = "4.5.31", features = ["derive"] }
+pacmanconf = "3.0.0"
+tr = "0.1.10"
