@@ -7,6 +7,7 @@
 
 use clap::{Parser, Subcommand};
 use tr::tr;
+use std::env;
 mod sync_db;
 
 
@@ -26,7 +27,13 @@ enum Commands{
 
 
 fn main() {
+    tr::tr_init!(env::var("LOCALE_DIR")
+    .as_deref()
+    .unwrap_or("/usr/share/locale/"));
+
     let args = Cli::parse();
+
+    println!("{}", tr!("This is a test"));
 
     if args.version {
         let alpm_v = alpm::version();

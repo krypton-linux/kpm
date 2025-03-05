@@ -202,6 +202,7 @@ dependencies = [
  "alpm",
  "alpm-utils",
  "clap",
+ "gettext-rs",
  "pacmanconf",
  "tr",
 ]

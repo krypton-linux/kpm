@@ -7,5 +7,6 @@ edition = "2024"
 alpm = "4.0.2"
 alpm-utils = "4.0.1"
 clap = { version = "4.5.31", features = ["derive"] }
+gettext-rs = "0.7.2"
 pacmanconf = "3.0.0"
 tr = "0.1.10"
