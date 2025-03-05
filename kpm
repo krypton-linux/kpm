@@ -17,6 +17,10 @@ from pyalpm import Handle
 def msg_err(error_message):
     sys.stderr.write("error: " + error_message + "\n")
 
+def version():
+    print("papm" + papm_version + " - pyalpm v" + pyalpm_version)
+    print("libalpm v" + alpm_version)
+
 
 args = sys.argv
 papm_version = "0.1 Alpha"
@@ -29,10 +33,11 @@ if len(args) == 1:
 
 match args[1]:
     case "-v":
-        print("papm" + papm_version + " - pyalpm v" + pyalpm_version)
-        print("libalpm v" + alpm_version)
+        version()
 
+    case "syncdb":
+        core = handle.register_syncdb("core", pyalpm.SIG_DATABASE)
+        extra = handle.register_syncdb("core", pyalpm.SIG_DATABASE)
 
 handle = Handle(".", "/var/lib/pacman")
 localdb = handle.get_localdb()
-coreutils = localdb.get_pkg("coreutils")
