@@ -1,4 +1,5 @@
 use alpm::Alpm;
+use tr::tr;
 
 
 pub fn sync_db(){
@@ -9,16 +10,16 @@ pub fn sync_db(){
 
     
     alpm.register_syncdb("core", alpm::SigLevel::DATABASE).unwrap_or_else(|e| {
-        eprintln!("Failed to register csyncdb:");
-        eprintln!("{e}");
+        eprintln!("{}", tr!("Failed to register csyncdb:"));
+        eprintln!("{}", tr!("{}", e));
         std::process::exit(1);
     });
 
 
 
     alpm.register_syncdb("extra", alpm::SigLevel::DATABASE).unwrap_or_else(|e| {
-        eprintln!("Failed to register syncdb:");
-        eprintln!("{e}");
+        eprintln!("{}", tr!("Failed to register syncdb:"));
+        eprintln!("{}", tr!("{}", e));
         std::process::exit(1);
     });
 

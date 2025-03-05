@@ -43,6 +43,5 @@ fn main() {
         }
     }
 
-    eprintln!("{}", tr!("No subcommand specified"));
 
 }
