@@ -1,2 +1,2 @@
 # kpm
-Krypton Linuxのために作られたパッケージマネージャー。
+Krypton Linuxのために作られたパッケージマネージャーをRustで実装したバージョンです。
