@@ -1,0 +1,8 @@
+msgid "Failed to initialize ALPM"
+msgstr "ALPMの初期化に失敗しました"
+
+msgid "Failed to register csyncdb:"
+msgstr "csyncdbの登録に失敗しました"
+
+msgid "Failed to register syncdb:"
+msgstr "syncdbの登録に失敗しました"
