@@ -9,11 +9,11 @@ https://www.rust-lang.org/ja/learn/get-started
 
 ## 必要な依存関係
 
-pkg-config
+- pkg-config
 
-base-devel
+- base-devel
 
-msgfmt
+- msgfmt
 
 
 これらの依存関係は、通常、Arch Linuxのインストール時にすでにインストールされているはずです。
