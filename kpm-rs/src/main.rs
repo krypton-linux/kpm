@@ -36,8 +36,6 @@ fn main() {
 
     let args = Cli::parse();
 
-    println!("{}", tr!("This is a test"));
-
     if args.version {
         let alpm_v = alpm::version();
         let papm_version = "0.1 Alpha";
