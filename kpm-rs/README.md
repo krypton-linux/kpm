@@ -33,3 +33,5 @@ cargo run
 ```sh
 cargo build --release
 ```
+
+ビルドが終了すると、最適化されたバイナリである `target/release/kpm` が生成されます。
