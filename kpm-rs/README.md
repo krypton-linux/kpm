@@ -34,4 +34,4 @@ cargo run
 cargo build --release
 ```
 
-ビルドが終了すると、最適化されたバイナリである `target/release/kpm` が生成されます。
+ビルドが終了すると、`target/release/` に、最適化されたkpmが生成されます。(kpmという名前で、実行可能ファイルが生成されてるはずです)
